@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: elastic-full-text-search
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.cloud.kubernetes.config.reload.ConfigReloadAutoConfiguration
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+
+
+elasticsearch:
+  username: ${ELASTIC_DB_USERNAME}
+  password: ${ELASTIC_DB_PASSWORD}
+  uris: ${ELASTIC_DB_HOSTS:localhost:5601}
